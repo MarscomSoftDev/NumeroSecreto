@@ -1,11 +1,17 @@
-let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+let numeroAEscojer = parseInt(prompt("que rango de numeros quieres jugar?"));
+let intentosAEscojet = parseInt(prompt("cuantos intentos quieres?"));
+let numeroSecreto = Math.floor(Math.random() * (numeroAEscojer - 1)) + 1;
 let numeroUsuario = 0;
 let intentos = 1;
 // let palabraVeces = "vez";
-let maximosIntentos = 3;
+
+console.log(`tu rango a jugar es menor a ${numeroAEscojer} intentos`);
+console.log(`tienes ${intentosAEscojet} intentos`);
 
 while (numeroUsuario != numeroSecreto) {
-  numeroUsuario = parseInt(prompt("Indica un numero por favor entre 1 y 10"));
+  numeroUsuario = parseInt(
+    prompt(`Indica un numero por favor entre 1 ${numeroAEscojer}`)
+  );
   console.log(numeroUsuario);
 
   if (numeroUsuario == numeroSecreto) {
@@ -22,8 +28,8 @@ while (numeroUsuario != numeroSecreto) {
     }
     intentos++;
     // palabraVeces = "veces";
-    if (intentos > maximosIntentos) {
-      alert(`llegaste al numero maximo de intentos ${maximosIntentos}`);
+    if (intentos > intentosAEscojet) {
+      alert(`llegaste al numero maximo de intentos ${intentosAEscojet}`);
       break;
     }
   }
